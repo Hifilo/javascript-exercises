@@ -1,27 +1,50 @@
 const sumAll = function (...args) {
-	let array = args.slice();
+	const checkResult = check(args);
 
+	if (checkResult === `ERROR`) {
+		return checkResult;
+	}
+	// console.log(args);
+	// let test = [10, 90];
+	// console.log(check(args));
+
+	let array = args.slice();
 	let arraySort = array.sort(compareFn);
 	arraySort;
 	let numbers = [];
 	let length = arraySort[0];
+	let sum;
 
 	for (let i = 0; i < length + 1; i++) {
+		sum = 0;
 		numbers.push(i);
 	}
-	let sum = 0;
-	numbers.reverse();
+
 	numbers.forEach((item) => {
 		// console.log(item);
 		sum = sum + item;
 	});
+	console.log(sum);
+	return sum;
 
 	function compareFn(a, b) {
 		return b - a;
 	}
 
-	console.log(sum);
-	return sum;
+	function check(test) {
+		for (const value of test) {
+			if ((typeof value !== 'number') | (value < 0)) {
+				return `ERROR`;
+			}
+		}
+		return true;
+
+		// A method using callback function
+		/* 		if (test.includes(value => typeof value !== 'number' || value < 0)) {
+    return `ERROR`;
+  }
+  return true; */
+	}
 
 	// console.log(array, numbers);
 
@@ -33,9 +56,8 @@ populate array with numbers between starting integer and last integer
 then add all numbers together
 
 */
+
+	// sumAll(10, '90');
 };
-
-sumAll(123, 1);
-
 // Do not edit below this line
 module.exports = sumAll;
