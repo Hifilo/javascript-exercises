@@ -3,10 +3,7 @@ const leapYears = function (...args) {
 	// console.log(args.every((args) => typeof args === `bigint`));
 	// console.log(typeof args[args]);
 
-	if (
-		(args % 4 === 0 && args % 100 !== 0) ||
-		(args % 100 === 0 && args % 400 === 0)
-	) {
+	if (args % 4 === 0 && (args % 100 !== 0 || args % 400 === 0)) {
 		console.log((leapYr = true));
 	} else {
 		console.log((leapYr = false));
