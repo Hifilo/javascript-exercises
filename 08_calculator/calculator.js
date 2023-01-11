@@ -1,33 +1,55 @@
-const add = function() {
-	
+const add = function (...args) {
+	let result = args[0];
+	args.forEach((item) => {
+		result += item;
+	});
+	return result;
+	// for (let arg of args) {
+	// 	arg += args;
+	// 	return arg;
+	// }
+};
+// console.log(add(2, 5));
+const subtract = function (...args) {
+	let result = args[1];
+	result;
+	args.forEach((item) => {
+		result -= item;
+	});
+
+	return result;
+};
+console.log(subtract(5, 4));
+const sum = function (...args) {
+	let result = 0;
+	args.forEach((item) => {
+		result += item;
+	});
+	return result;
 };
 
-const subtract = function() {
-	
+const multiply = function (...args) {
+	let result = 0;
+	args.forEach((item) => {
+		result *= item;
+	});
+	return result;
 };
-
-const sum = function() {
-	
+const power = function (...args) {
+	let result = 0;
+	args.forEach((item) => {
+		result **= item;
+	});
+	return result;
 };
-
-const multiply = function() {
-
-};
-
-const power = function() {
-	
-};
-
-const factorial = function() {
-	
-};
+const factorial = function (...args) {};
 
 // Do not edit below this line
 module.exports = {
-  add,
-  subtract,
-  sum,
-  multiply,
-  power,
-  factorial
+	add,
+	subtract,
+	sum,
+	multiply,
+	power,
+	factorial,
 };
