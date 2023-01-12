@@ -1,7 +1,7 @@
 const add = function (...args) {
-	let result = args[0];
+	let result = 0;
 	args.forEach((item) => {
-		result += item;
+		result += parseFloat(item);
 	});
 	return result;
 	// for (let arg of args) {
@@ -10,37 +10,52 @@ const add = function (...args) {
 	// }
 };
 // console.log(add(2, 5));
+
 const subtract = function (...args) {
-	let result = args[1];
-	result;
-	args.forEach((item) => {
-		result -= item;
-	});
-
+	// const result = args.reduce((previous, current) => {
+	// 	return parseFloat(previous - current);
+	// });
+	let result = args[0];
+	for (let i = 1; i < args.length; i++) {
+		result -= parseFloat(args[i]);
+	}
 	return result;
 };
-console.log(subtract(5, 4));
-const sum = function (...args) {
-	let result = 0;
-	args.forEach((item) => {
-		result += item;
-	});
-	return result;
+// console.log(subtract(5, 4));
+const sum = (...args) => {
+	let result;
+	// let defValue = 0;
+	// let arEntries = args.entries();
+	console.log(args.length);
+	if (args.length === 0) {
+		return (result = 0);
+	}
+	for (let i = 0; i < args.length; i++) {
+		if (args[i] == '' || args[i] == undefined) {
+			return (result = 0);
+		}
+		args.forEach((item) => {
+			result = item.reduce((previous, current) => previous + current);
+		});
+		console.log(result);
+	}
+	return parseFloat(result);
 };
-
+// console.log(sum([]));
 const multiply = function (...args) {
-	let result = 0;
+	let result = 1;
 	args.forEach((item) => {
-		result *= item;
+		result = item.reduce((previous, current) => previous * current);
 	});
-	return result;
 };
+
+multiply([2, 4]);
 const power = function (...args) {
 	let result = 0;
 	args.forEach((item) => {
 		result **= item;
 	});
-	return result;
+	return result === 0;
 };
 const factorial = function (...args) {};
 
