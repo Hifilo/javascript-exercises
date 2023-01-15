@@ -69,6 +69,7 @@ power(4, 3);
 function factorialize(num) {
 	if (num === 0 || num === 1) return 1;
 	for (var i = num - 1; i >= 1; i--) {
+		i;
 		num *= i;
 	}
 	return num;
@@ -77,13 +78,11 @@ console.log(factorialize(6));
 
 function arrayFill(args) {
 	let multiplier = [];
-	for (let i = 1; i <= args.length; i++) {
-		for (let j = 1; j < args; j++) {
-			multiplier.push(j);
-		}
+	for (let i = 1; i <= args; i++) {
+		multiplier.push(i);
+
 		// element.flat(element.push(i));
 	}
 	console.log(multiplier);
-	return multiplier;
 }
-arrayFIll(5);
+arrayFill(5);

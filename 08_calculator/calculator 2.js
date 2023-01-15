@@ -1,15 +1,15 @@
 // 1st attempt Trying various iterative methods, and hard coding args & Arrays. Perhaps a little over-engineered
 
 const add = function (...args) {
-	let result = 0;
-	args.forEach((item) => {
-		result += parseFloat(item);
-	});
-	return result;
-	// for (let arg of args) {
-	// 	arg += args;
-	// 	return arg;
-	// }
+	// let result = 0;
+	// args.forEach((item) => {
+	// 	result += parseFloat(item);
+	// });
+	// return result;
+	// // for (let arg of args) {
+	// // 	arg += args;
+	// // 	return arg;
+	// // }
 };
 // console.log(add(2, 5));
 
