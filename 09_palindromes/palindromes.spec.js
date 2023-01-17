@@ -7,10 +7,13 @@ describe('palindromes', () => {
 	test('works with punctuation ', () => {
 		expect(palindromes('racecar!')).toBe(true);
 	});
+	test('returns false if not a palindrome', () => {
+		expect(palindromes('this is not a palindrome')).toBe(false);
+	});
 	test('works with upper-case letters ', () => {
 		expect(palindromes('Racecar!')).toBe(true);
 	});
-	test('works with multiple words', () => {
+	test('works with multiple words with punctuation', () => {
 		expect(palindromes('A car, a man, a maraca.')).toBe(true);
 	});
 	test('works with multiple words', () => {
