@@ -13,13 +13,25 @@ const leapYears = function (...args) {
 	return leapYr;
 };
 
+//more concise method
+
+// const leapYears = function (args) {
+// 	return args % 4 === 0 && (args % 100 !== 0 || args % 400 === 0);
+// };
+
+
+
+leapYears(700);
+// Do not edit below this line
+module.exports = leapYears;
+
+
+//pseudocode
 // [1n, 2, 3n].every((x) => typeof x == 'bigint');
 // false[(1n, 2n, 3n)].every((x) => typeof x == 'bigint');
 // true;
 
-leapYears(700);
 /* x/4 = leap
 leap / 100 = no leap
 (leap/100)/400) = leap */
-// Do not edit below this line
-module.exports = leapYears;
+
